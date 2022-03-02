@@ -14,4 +14,4 @@ El sistema va a estar separado en dos partes: Backend (Laravel) y Frontend (Reac
 
 ### Diagrama: Entidad Relación
 
-<img src="diagrama_uml.jpg" alt="Entidad Realación" >
+![alt Entidad-Relación](diagram_entity_relation.jpg)
