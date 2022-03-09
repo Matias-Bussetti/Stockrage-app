@@ -2,6 +2,7 @@
 
 -   [Migraciones](#section-1)
 -   [SQL](#section-2)
+-   [Models](#section-3)
 
 <a name="section-1"></a>
 
@@ -193,3 +194,9 @@ Migrated:  2022_03_03_191152_create_racks_table (546.17ms)
 ```
 
 Y eso el lo minimo que necesitamos para que nuestra aplicación de Laravel ya comience a guardar datos en la base de datos recien creada.
+
+---
+
+<a name="section-3"></a>
+
+## Model
