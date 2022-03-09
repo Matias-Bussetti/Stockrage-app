@@ -7,6 +7,6 @@
 
     -   [Diagramas](/{{route}}/{{version}}/diagrams)
 
--   ## Blog
+-   ## Client & Sever Side
 
-    -   [BackEnd](/{{route}}/{{version}}/backend-blog)
+    -   [Server Side](/{{route}}/{{version}}/server_side)
