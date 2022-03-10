@@ -10,12 +10,15 @@ class Rack extends Model
 {
     use HasFactory;
     
+    //Tabla SQL del Modelo
+    protected $table = 'racks';
+
     // Especificar atributos para crear un modelo con asignación en masa
     protected $fillable = ['name'];
     
     //Relaciones
     public function shelves()
     {
-        return $this->hasMany(Comment::class, 'foreign_key');
+        return $this->hasMany(Shelf::class);
     }
 }

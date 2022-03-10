@@ -11,6 +11,10 @@ class Shelf extends Model
 {
     use HasFactory;
 
+    //Tabla SQL del Modelo
+    protected $table = 'shelves';
+
+
     // Especificar atributos para crear un modelo con asignación en masa
     protected $fillable = ['name','rows','columns'];
     
@@ -24,7 +28,7 @@ class Shelf extends Model
 
     public function rack()
     {
-        return $this->belongsTo(Rack::class);
+        return $this->belongsTo(Rack::class, 'rack_id');
     }
 
     public function items()

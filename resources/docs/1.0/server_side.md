@@ -116,7 +116,7 @@ class CreateRacksTable extends Migration
     {
         Schema::create('racks', function (Blueprint $table) {
             $table->id();
-            $table->tinyText('name');
+            $table->tinyText('name')->nullable(true);;
             $table->timestamps();
         });
     }
@@ -200,3 +200,79 @@ Y eso el lo minimo que necesitamos para que nuestra aplicación de Laravel ya co
 <a name="section-3"></a>
 
 ## Model
+
+Configuraremos los modelos para poder hacer uso de la asignación en masa y tambien crearemos los metodos para hacer uso de las relaciones
+
+#### Item
+
+```php
+class Item extends Model
+{
+    use HasFactory;
+
+    protected $table = 'items';
+
+    protected $fillable = ['name','icon','amount'];
+
+    protected $attributes = [
+        'column_start' => 1,
+        'column_end' => 2,
+        'row_start' => 1,
+        'row_end' => 2,
+    ];
+
+    public function shelf()
+    {
+        return $this->belongsTo(Shelf::class, 'shelf_id');
+    }
+}
+```
+
+#### Shelf
+
+```php
+class Shelf extends Model
+{
+    use HasFactory;
+
+    protected $table = 'shelves';
+
+    protected $fillable = ['name','rows','columns'];
+
+    protected $attributes = [
+        'type' => 0,
+    ];
+
+    public function rack()
+    {
+        return $this->belongsTo(Rack::class, 'rack_id');
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+}
+```
+
+#### Rack
+
+```php
+class Rack extends Model
+{
+    use HasFactory;
+
+    protected $table = 'racks';
+
+    protected $fillable = ['name'];
+
+    public function shelves()
+    {
+        return $this->hasMany(Comment::class);
+    }
+}
+```
+
+-   $table: nombre de la tabla la cual va a ser utilizada para guardar los modelos
+-   $fillable: los atributos de un arreglo que utlizara para crear un modelo en caso que se utilize la asignación en masa
+-   $attributes: los atributos por defecto que un modelo endra.

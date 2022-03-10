@@ -10,6 +10,9 @@ class Item extends Model
 {
     use HasFactory;
 
+    //Tabla SQL del Modelo
+    protected $table = 'items';
+
     // Especificar atributos para crear un Item desde Item::create(['name' => '...']);
     protected $fillable = ['name','icon','amount'];
     
@@ -30,6 +33,6 @@ class Item extends Model
     //Relaciones
     public function shelf()
     {
-        return $this->belongsTo(Shelf::class);
+        return $this->belongsTo(Shelf::class, 'shelf_id');
     }
 }

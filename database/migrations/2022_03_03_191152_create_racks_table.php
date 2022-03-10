@@ -15,7 +15,7 @@ class CreateRacksTable extends Migration
     {
         Schema::create('racks', function (Blueprint $table) {
             $table->id();
-            $table->tinyText('name');
+            $table->tinyText('name')->nullable(true);
             $table->timestamps();
         });
     }
