@@ -25,7 +25,6 @@ class Shelf extends Model
     ];
 
     //Relaciones
-
     public function rack()
     {
         return $this->belongsTo(Rack::class, 'rack_id');

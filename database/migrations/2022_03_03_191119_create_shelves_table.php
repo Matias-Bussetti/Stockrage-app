@@ -17,7 +17,7 @@ class CreateShelvesTable extends Migration
         Schema::create('shelves', function (Blueprint $table) {
             $table->id();
             $table->tinyText('name')->nullable(true);
-            $table->integer('amount');
+            $table->integer('type');
             $table->tinyInteger('columns');
             $table->tinyInteger('rows');
             $table->foreignIdFor(Rack::class);

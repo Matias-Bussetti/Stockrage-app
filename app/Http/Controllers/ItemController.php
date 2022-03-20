@@ -15,17 +15,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Item::all();
     }
 
     /**
@@ -47,18 +37,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Item  $item
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Item $item)
-    {
-        //
+        return Item::findOrFail($item['id']);
     }
 
     /**

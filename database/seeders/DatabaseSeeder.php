@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Rack;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,8 +12,18 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+
+    // Para Ejecutar los seeder, en consola escribiremos: 
+    // php artisan db:seed
+    // o en el caso que queramos ejecutar una clase en especial escribiremos:
+    // php artisan db:seed -class=NameSeederitems
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //Este metodo llama a los seeders y los ejecuta
+        $this->call(
+            [
+                RackSeeder::class
+            ]
+        );
     }
 }

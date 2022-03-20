@@ -14,7 +14,7 @@ class Item extends Model
     protected $table = 'items';
 
     // Especificar atributos para crear un Item desde Item::create(['name' => '...']);
-    protected $fillable = ['name','icon','amount'];
+    protected $fillable = ['name','amount'];
     
     // Valor por defecto de algunos atributos
     /*

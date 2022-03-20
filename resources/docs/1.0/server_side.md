@@ -276,3 +276,7 @@ class Rack extends Model
 -   $table: nombre de la tabla la cual va a ser utilizada para guardar los modelos
 -   $fillable: los atributos de un arreglo que utlizara para crear un modelo en caso que se utilize la asignación en masa
 -   $attributes: los atributos por defecto que un modelo endra.
+
+Controller
+
+php artisan make:controller ItemController --api --model=Item -R
