@@ -13,7 +13,21 @@ class StoreItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'El nombre es requerido',
+            'name.max' => 'El nombre debe de tener un maximo de 240 carracteres',
+            'amount' => 'La cantidad debe de ser mayor a 0',
+        ];
     }
 
     /**
@@ -24,7 +38,8 @@ class StoreItemRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:240',
+            'amount' => 'min:0'
         ];
     }
 }

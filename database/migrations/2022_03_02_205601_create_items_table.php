@@ -22,7 +22,7 @@ class CreateItemsTable extends Migration
             $table->tinyInteger('column_end');
             $table->tinyInteger('row_start');
             $table->tinyInteger('row_end');
-            $table->foreignIdFor(Shelf::class);
+            $table->foreignIdFor(Shelf::class)->nullable();
             $table->timestamps();
         });
     }

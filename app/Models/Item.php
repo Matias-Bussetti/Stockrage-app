@@ -14,7 +14,15 @@ class Item extends Model
     protected $table = 'items';
 
     // Especificar atributos para crear un Item desde Item::create(['name' => '...']);
-    protected $fillable = ['name','amount'];
+    protected $fillable = [
+        'name',
+        'amount',
+        'column_start',
+        'column_end',
+        'row_start',
+        'row_end',
+        'shelf_id'
+    ];
     
     // Valor por defecto de algunos atributos
     /*
@@ -24,10 +32,12 @@ class Item extends Model
     2da |-------|
     */
     protected $attributes = [
+        'amount' => 0,
         'column_start' => 1,
         'column_end' => 2,
         'row_start' => 1,
         'row_end' => 2,
+        'shelf_id' => null
     ];
 
     //Relaciones
